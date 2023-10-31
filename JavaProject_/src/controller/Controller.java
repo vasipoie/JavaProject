@@ -87,7 +87,7 @@ public class Controller extends Print {
 		/*
 		 * name 2~4글자 입력, 체크
 		 */
-		String name = "";
+		String name;
 		while(true) {
 			name = ScanUtil.nextLine("이름 >>");
 			boolean namePass = loginService.nameChk(name);
@@ -104,10 +104,11 @@ public class Controller extends Print {
 		 * try 숫자 정상적으로
 		 * catch 숫자로 바꿀 수 없으니까 다시하라고 알려주기
 		 */
-		String phone = "";
+		String phone;
 		while(true) {
 			phone = ScanUtil.nextLine("전화번호 >>");
 			try {
+				phone = phone.replace("-", "");
 				if(phone.length()!=11) {
 					System.out.println("11자리 숫자만 입력하세요");
 					continue;
@@ -115,7 +116,7 @@ public class Controller extends Print {
 				Long.parseLong(phone);
 				break;	//long으로 바뀌면 break해서 while문 빠져나감. 안바뀌면 catch문으로 감
 			} catch (Exception e) {
-				
+				System.out.println(e);
 			}
 			System.out.println("11자리 숫자만 입력하세요");
 		}
@@ -126,6 +127,7 @@ public class Controller extends Print {
 		param.add(pass);
 		param.add(name);
 		param.add(phone);
+//		param.add(joindate);
 		
 		boolean signPass = loginService.signUp(param);	//service의 signUp으로 보내고, dao의 signUp으로 보내고, sql, param을 JDBCUtill update로 보낸다
 		if(signPass) {

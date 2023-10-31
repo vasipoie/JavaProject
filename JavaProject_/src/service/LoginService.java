@@ -73,10 +73,14 @@ public class LoginService {
 			}
 			else if('a' <= ch && ch <= 'z') {
 				
+			}
+			else if('A' <= ch && ch<='Z') {
+				
 			}else {
 				return false;
 			}
 		}
+		
 		if(id.length()<=10) {
 			
 		}else {
@@ -86,12 +90,30 @@ public class LoginService {
 		return pass;
 	}
 	
+	/*
+	 * id, pass랑 같은 메소드를 사용할거니까
+	 * 구현이 돌아가는 메소드는 한개,
+	 * 다른게 재구현하는 형태로 짤 것
+	 
+	public boolean idPassChk(String string) {
+		return true;
+	}
+	
+	public boolean idChk(String id) {
+		return idPassChk(id);
+	}
+	
+	public boolean passChk(String pass) {
+		return idPassChk(pass);
+	}
+	 */
+	
 	/**
 	 * name 2~4글자 입력, 체크
 	 */
 	public boolean nameChk(String name) {
 		boolean pass = true;
-		if(2<name.length() && name.length()<8) {
+		if(2<=name.length() && name.length()<=4) {
 			
 		}else {
 			return false;
