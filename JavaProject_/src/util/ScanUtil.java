@@ -15,9 +15,9 @@ public class ScanUtil {
 	}
 	
 	/*
-	 * private니까 사용자가 사용 못하게 막음
+	 * 니까 사용자가 사용 못하게 막음
 	 */
-	private static String nextLine() {
+	 static String nextLine() {
 		return sc.nextLine();
 	}
 	public static int nextInt(String print) {
@@ -25,7 +25,7 @@ public class ScanUtil {
 		return nextInt();
 	}
 	
-	private static int nextInt() {
+	 static int nextInt() {
 		while(true) {
 			try {
 				int result = Integer.parseInt(sc.nextLine());

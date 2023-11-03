@@ -10,8 +10,8 @@ import vo.Member;
 // 데이터베이스로 쿼리를 날려서 결과를 얻는다.
 public class LoginDAO {
 	// 싱글톤 패턴을 만든다.
-	private static LoginDAO instance = null;
-	private LoginDAO() {}
+	 static LoginDAO instance = null;
+	 LoginDAO() {}
 	public static LoginDAO getInstance() {
 		if(instance == null) 
 			instance = new LoginDAO();

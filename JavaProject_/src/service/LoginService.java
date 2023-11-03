@@ -9,8 +9,8 @@ import vo.Member;
 
 public class LoginService {
 	// 싱글톤 패턴을 만든다.
-	private static LoginService instance = null;
-	private LoginService() {}
+	 static LoginService instance = null;
+	 LoginService() {}
 	public static LoginService getInstance() {
 		if(instance == null) 
 			instance = new LoginService();

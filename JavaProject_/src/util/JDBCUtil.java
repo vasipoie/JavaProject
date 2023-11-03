@@ -27,9 +27,9 @@ public class JDBCUtil {
 	// 싱글톤 패턴 : 인스턴스의 생성을 제한하여 하나의 인스턴스만 사용하는 디자인 패턴
 	
 	// 인스턴스를 보관할 변수
-	private static JDBCUtil instance = null;
-	// JDBCUtil 객체를 만들 수 없게(인스턴스화 할 수 없게) private으로 제한함
-	private JDBCUtil() {} 
+	 static JDBCUtil instance = null;
+	// JDBCUtil 객체를 만들 수 없게(인스턴스화 할 수 없게) 으로 제한함
+	 JDBCUtil() {} 
 	public static JDBCUtil getInstance() {
 		if(instance == null) 
 			instance = new JDBCUtil();
@@ -58,13 +58,13 @@ public class JDBCUtil {
 		}
 	}
 	
-	private String url = "jdbc:oracle:thin:@192.168.143.34:1521:xe";
-	private String user = "pc02";
-	private String password = "java";
+	 String url = "jdbc:oracle:thin:@192.168.143.34:1521:xe";
+	 String user = "pc02_java";
+	 String password = "java";
 	
-	private Connection conn = null;
-	private ResultSet rs = null;
-	private PreparedStatement ps = null;
+	 Connection conn = null;
+	 ResultSet rs = null;
+	 PreparedStatement ps = null;
 	
 	public List<Map<String, Object>> selectList(String sql, List<Object> param){
 		// sql => "SELECT * FROM MEMBER WHERE MEM_ADD1 LIKE '%'||?||'%'"

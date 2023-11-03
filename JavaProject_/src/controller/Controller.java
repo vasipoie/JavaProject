@@ -29,7 +29,7 @@ public class Controller extends Print {
 		new Controller().start();
 	}
 
-	private void start() {
+	 void start() {
 		sessionStorage.put("login", false); // false: 로그인 안됨
 		sessionStorage.put("loginInfo", null);
 		View view = View.HOME;
@@ -51,7 +51,7 @@ public class Controller extends Print {
 		}
 	}
 
-	private View signUp() {
+	 View signUp() {
 		System.out.println("회원가입 정보를 입력해주세요.");
 		/*
 		 * id 10자 이내 입력 하도록 체크할 것
@@ -140,14 +140,14 @@ public class Controller extends Print {
 		}
 	}
 
-	private View main() {
+	 View main() {
 //		Map<String, Object> loginInfo = (Map<String, Object>) sessionStorage.get("loginInfo");
 //		System.out.println(loginInfo.get("NAME") + "님! 로그인 되었습니다");
 		System.out.println("환영합니다.");
 		return null;
 	}
 
-	private View login() {
+	 View login() {
 		View pageNo;
 		/*
 		 * Scanner sc = new Scanner(System.in);
@@ -167,7 +167,7 @@ public class Controller extends Print {
 		return pageNo;
 	}
 
-	private View home() {
+	 View home() {
 		printHome();
 		switch (ScanUtil.nextInt("번호 입력 >> ")) {
 		case 1:

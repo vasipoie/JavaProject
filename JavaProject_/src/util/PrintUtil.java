@@ -48,7 +48,7 @@ public class PrintUtil {
 		System.out.println(str);
 	}
 	
-	private static String formater(String str, int length, String spaceString) {
+	 static String formater(String str, int length, String spaceString) {
 		String result = "";
 		int s = Math.abs(length);
 		for(int i = 0; i < str.length(); i++) {
@@ -68,7 +68,7 @@ public class PrintUtil {
 		return result;
 	}
 	
-	private static String setSpace(String str, int count, String spaceString) {
+	 static String setSpace(String str, int count, String spaceString) {
 		for(int i = 0; i < count; i++) {
 			str += spaceString;
 		}
