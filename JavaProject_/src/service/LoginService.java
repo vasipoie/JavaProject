@@ -1,6 +1,7 @@
 package service;
 
 import java.util.List;
+import java.util.Map;
 
 import controller.Controller;
 import dao.LoginDAO;
@@ -8,6 +9,9 @@ import exception.PassChkException;
 import vo.Member;
 
 public class LoginService {
+	
+	static public Map<String, Object> sessionStorage = Controller.sessionStorage;
+	
 	// 싱글톤 패턴을 만든다.
 	 static LoginService instance = null;
 	 LoginService() {}
@@ -36,8 +40,8 @@ public class LoginService {
 //		if(result != null && result.get("MEM_ID").equals(id)){	//map방식
 		if(result != null && result.getId().equals(id)){		//VO방식
 			loginCount++;
-			Controller.sessionStorage.put("login", true);
-			Controller.sessionStorage.put("loginInfo", result);
+			sessionStorage.put("login", true);
+			sessionStorage.put("loginInfo", result);
 			return true;
 		}else{
 			return false;
